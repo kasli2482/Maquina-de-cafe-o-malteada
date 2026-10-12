@@ -6,7 +6,6 @@ Variables:
 - Cantidad de azucar
 - Cantidad de vasos
 - Saldo ingresado por el usuario
-- Saldo disponible en la maquina de cafe
 - Temperatura de agua
 
 Productos:
