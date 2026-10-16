@@ -1,12 +1,12 @@
 Variables:
-- Cantidad de agua
-- Cantidad de cafe
-- Cantidad de leche
-- Cantidad de chocolate
-- Cantidad de azucar
-- Cantidad de vasos
-- Saldo ingresado por el usuario
-- Temperatura de agua
+- Cantidad de agua //Mililitros//
+- Cantidad de cafe //Gramos//
+- Cantidad de leche //Mililitros//
+- Cantidad de chocolate //Gramos//
+- Cantidad de azucar //Gramos//
+- Cantidad de vasos //Unidad//
+- Saldo ingresado por el usuario //Pesos colombianos-Moneda y billete//
+- Temperatura de agua //Celcius//
 
 Productos:
 - Cafe Expresso
