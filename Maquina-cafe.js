@@ -33,7 +33,7 @@ if (CantidadCafe > minCafe && CantidadLeche > minLeche && CantidadChocolate > mi
 }
 
 
-if (minCafe <= 10|| minLeche <= 100 || minChocolate <= 30 || minAzucar <= 10 || minVasos <= 1) {
+if (minCafe <= 10 && minLeche <= 100 && minChocolate <= 30 && minAzucar <= 10 && minVasos <= 1) {
   console.log("La cantidad de insumos es suficiente para preparar bebidas.");
 }
   else {
