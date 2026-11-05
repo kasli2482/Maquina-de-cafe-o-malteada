@@ -16,20 +16,20 @@ let minVasos = 1;           // unidades
 
 //Catalogio de productos y sus recetas//
 const recetasCafe = {
-  espresso: { nombre: "Espresso", agua: 35, cafe: 15, leche: 0, chocolate: 0, precio: 2000 },
-  americano: { nombre: "Americano", agua: 100, cafe: 15, leche: 0, chocolate: 0, precio: 2800 },
-  cappuccino: { nombre: "Cappuccino", agua: 25, cafe: 20, leche: 150, chocolate: 0, precio: 3500 },
-  latte: { nombre: "Latte", agua: 45, cafe: 20, leche: 160, chocolate: 0, precio: 4000 },
-  mocaccino: { nombre: "Mocaccino", agua: 40, cafe: 15, leche: 120, chocolate: 30, precio: 4600 },
-  chocolate: { nombre: "Chocolate Caliente", agua: 100, cafe: 0, leche: 120, chocolate: 40, precio: 3500 }
+  espresso: { agua: 35, cafe: 15, leche: 0, chocolate: 0, precio: 2000 },
+  americano: { agua: 100, cafe: 15, leche: 0, chocolate: 0, precio: 2800 },
+  cappuccino: { agua: 25, cafe: 20, leche: 150, chocolate: 0, precio: 3500 },
+  latte: { agua: 45, cafe: 20, leche: 160, chocolate: 0, precio: 4000 },
+  mocaccino: { agua: 40, cafe: 15, leche: 120, chocolate: 30, precio: 4600 },
+  chocolate: { agua: 100, cafe: 0, leche: 120, chocolate: 40, precio: 3500 }
 };
  
 if (CantidadCafe <= minCafe || CantidadLeche <= minLeche || CantidadChocolate <= minChocolate || CantidadAzucar <= minAzucar || CantidadVasos <= minVasos) {
-  console.log("La máquina de café no tiene suficiente stock para preparar bebidas.");
+  console.log("La máquina de café no tiene suficientes insumos para preparar bebidas.");
 }
 
 if (CantidadCafe > minCafe && CantidadLeche > minLeche && CantidadChocolate > minChocolate && CantidadAzucar > minAzucar && CantidadVasos > minVasos) {
-  console.log("La máquina de café tiene suficiente stock para preparar bebidas.");
+  console.log("La máquina de café tiene suficientes insumos para preparar bebidas.");
 }
 
 
@@ -39,3 +39,41 @@ if (minCafe <= 10 && minLeche <= 100 && minChocolate <= 30 && minAzucar <= 10 &&
   else {
     console.log("La cantidad de insumos no es suficiente para preparar bebidas.");
   }
+
+switch (recetasCafe) {
+    case 1:
+      espresso;
+      break;
+    case 2:
+      americano;
+      break;
+    case 3:
+      cappuccino;
+      break;
+    case 4:
+      latte;
+      break;
+    case 5:
+      mocaccino;
+      break;
+    case 6:
+      chocolate;
+      break;
+    default:
+      console.log("La opcion no es valida. Seleccione un número del 1 al 6");
+      break;
+  }
+
+switch (recetasCafe){
+    case "espresso":
+      CantidadCafe = CantidadCafe - espresso;
+      break;
+    case "americano":
+      CantidadCafe = CantidadCafe - americano;
+
+
+
+
+
+  
+}
