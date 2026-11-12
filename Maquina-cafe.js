@@ -15,7 +15,7 @@ let minAzucar = 10;         // g
 let minVasos = 1;           // unidades
 
 //Cantidad de dinerode la maquina//
-const cantidaddinero= {
+const cantidaddinero = {
   moneda100: 100,
   moneda200: 200,
   moneda500: 500,
