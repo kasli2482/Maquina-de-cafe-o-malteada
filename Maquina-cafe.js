@@ -5,6 +5,7 @@ let CantidadLeche = 2500;      // ml
 let CantidadChocolate = 1500;  // g
 let CantidadAzucar = 1500;     // g
 let CantidadVasos = 100;       // unidades
+let CantidadAgua = 5000;       // ml
 
 // Cantidad minima para la receta//
 
@@ -13,7 +14,7 @@ let minLeche = 100;         // ml
 let minChocolate = 30;      // g
 let minAzucar = 10;         // g
 let minVasos = 1;           // unidades
-
+let minAgua = 100;          // ml
 //Cantidad de dinerode la maquina//
 const cantidaddinero = {
   moneda100: 100,
@@ -69,6 +70,22 @@ function restarvaso(){
 return CantidadVasos = CantidadVasos - 1
 }
 
+ //Verificacion de insumos//
+
+ function revisarInsumos(){
+  if (
+    CantidadCafe <= minCafe ||
+    CantidadAgua <= minAgua ||
+    CantidadLeche <= minLeche ||
+    CantidadChocolate <= minChocolate ||
+    CantidadAzucar <= minAzucar ||
+    CantidadVasos <= minVasos
+   ) {
+    return "La máquina de café no tiene suficientes insumos.";
+  }
+  else{
+  return "La máquina de café tiene suficientes insumos.";
+  }}
 
 switch(recetasCafe){
     case "espresso":
@@ -77,7 +94,6 @@ switch(recetasCafe){
       CantidadAzucar = CantidadAzucar - espresso;
       CantidadLeche = CantidadLeche - espresso;
       CantidadChocolate =  CantidadChocolate - espresso;
-      CantidadVasos = CantidadVasos - 1;
       break;
     case "americano":
       restarvaso();
@@ -85,7 +101,6 @@ switch(recetasCafe){
       CantidadAzucar = CantidadAzucar - americano;
       CantidadLeche = CantidadLeche - americano;
       CantidadChocolate =  CantidadChocolate - americano;
-      CantidadVasos = CantidadVasos - 1;
       break;
     case "cappuccino":
       restarvaso();
@@ -93,7 +108,6 @@ switch(recetasCafe){
       CantidadAzucar = CantidadAzucar - cappuccino;
       CantidadLeche = CantidadLeche - cappuccino;
       CantidadChocolate =  CantidadChocolate - cappuccino;
-      CantidadVasos = CantidadVasos - 1;
       break;
     case "latte":
       restarvaso();
@@ -101,7 +115,6 @@ switch(recetasCafe){
       CantidadAzucar = CantidadAzucar - latte;
       CantidadLeche = CantidadLeche - latte;
       CantidadChocolate =  CantidadChocolate - latte;
-      CantidadVasos = CantidadVasos - 1;
       break;
     case "mocaccino":
       restarvaso();
@@ -109,7 +122,6 @@ switch(recetasCafe){
       CantidadAzucar = CantidadAzucar - mocaccino;
       CantidadLeche = CantidadLeche - mocaccino;
       CantidadChocolate =  CantidadChocolate - mocaccino;
-      CantidadVasos = CantidadVasos - 1;
       break;
     case "chocolate":
       restarvaso();
@@ -117,7 +129,6 @@ switch(recetasCafe){
       CantidadAzucar = CantidadAzucar - chocolate;
       CantidadLeche = CantidadLeche - chocolate;
       CantidadChocolate =  CantidadChocolate - chocolate;
-      CantidadVasos = CantidadVasos - 1;
       break;
     default:
       console.log("La opcion no es valida. Seleccione un número del 1 al 6");
