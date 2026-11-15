@@ -1,12 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maquina de cafe funcional o eso creo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08070a">
+  <title>Máquina de café con azúcar</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Maquina de cafe funcional o eso creo</h1>
-    <script src="Maquina-cafe.js"></script>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">☕</div>
+      <div>
+        <p class="eyebrow">CAFÉ RECIÉN PREPARADO</p>
+        <h1>Máquina de café funcional… o eso creo</h1>
+        <p class="tagline">Con azúcar, porque el café es mejor dulce.</p>
+      </div>
+      <span class="machine-status"><i></i> En servicio</span>
+    </header>
+
+    <section class="welcome">
+      <div>
+        <p class="eyebrow">TU PAUSA FAVORITA</p>
+        <h2>¿Qué se te antoja hoy?</h2>
+        <p>Elige tu bebida, agrégale azúcar y disfruta.</p>
+      </div>
+      <div class="welcome-art" aria-hidden="true">☕</div>
+    </section>
+
+    <div class="layout">
+      <section class="menu-panel panel" aria-labelledby="menuTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">NUESTRO MENÚ</p>
+            <h2 id="menuTitle">Elige tu bebida</h2>
+          </div>
+          <span class="muted">Precios en COP</span>
+        </div>
+        <div id="productGrid" class="product-grid"></div>
+      </section>
+
+      <aside class="order-panel panel" aria-labelledby="orderTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TU PEDIDO</p>
+            <h2 id="orderTitle">Prepara tu café</h2>
+          </div>
+        </div>
+
+        <div id="selectedProduct" class="selected-product empty">
+          <span class="cup-icon" aria-hidden="true">☕</span>
+          <p>Selecciona una bebida del menú.</p>
+        </div>
+
+        <label class="field-label" for="sugar">
+          Azúcar <span id="sugarValue">0 cucharadas</span>
+        </label>
+        <input id="sugar" type="range" min="0" max="5" value="0">
+        <div class="range-labels"><span>Sin azúcar</span><span>5 cucharadas</span></div>
+
+        <div class="payment-title">
+          <h3>Forma de pago</h3>
+          <span class="muted">Agrega monedas o billetes</span>
+        </div>
+        <div id="cashButtons" class="cash-buttons"></div>
+
+        <div class="payment-summary">
+          <div><span>Total a pagar</span><strong id="priceTotal">$0</strong></div>
+          <div><span>Dinero ingresado</span><strong id="paidTotal">$0</strong></div>
+          <div><span>Falta</span><strong id="remainingTotal">$0</strong></div>
+        </div>
+        <div id="paymentList" class="payment-list">Aún no has agregado dinero.</div>
+
+        <div class="order-actions">
+          <button id="buyButton" class="btn btn-primary" disabled>Preparar bebida</button>
+          <button id="clearButton" class="btn btn-secondary">Cancelar pedido</button>
+        </div>
+        <div id="message" class="message" role="status" aria-live="polite"></div>
+      </aside>
+    </div>
+
+    <section class="admin-panel panel" aria-labelledby="adminTitle">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PANEL DE CONTROL</p>
+          <h2 id="adminTitle">Estado de la máquina</h2>
+        </div>
+        <button id="toggleAdmin" class="btn btn-secondary" type="button">Mostrar detalles</button>
+      </div>
+      <div id="adminDetails" hidden>
+        <div id="stockGrid" class="stock-grid"></div>
+        <div class="admin-bottom">
+          <div>
+            <h3>Resumen de ventas</h3>
+            <p id="salesReport" class="report"></p>
+          </div>
+          <div class="admin-actions">
+            <p>
+              <strong id="cashInMachine">$0</strong><br>
+              <span class="muted">Dinero en caja</span>
+            </p>
+            <button id="restockButton" class="btn btn-primary" type="button">Reponer insumos</button>
+            <button id="resetSalesButton" class="btn btn-secondary" type="button">Reiniciar reporte</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>Hecho para disfrutar cada taza · Simulación académica</footer>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -83,3 +83,4 @@ Pedir la devolucion: La maquina devuelve el dinero que quedó en el saldo.
 
 Salidas (lo que la máquina muestra o entrega a la persona):
 Mensajes que aparecen en la pantalla: "La bebida no esta disponible.", "Saldo insuficiente", "Sin ingredientes", "Preparando su bebida", "Disfrute su bebida", "Cambio:(Lo que queda de cambio )", "Devolución: (Dinero que sobra)". La bebida esta preparada preparada.
+
