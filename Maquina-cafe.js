@@ -1,21 +1,28 @@
 //Variables de la maquina de café//
 
-let CantidadCafe = 1000;       // g
-let CantidadLeche = 2500;      // ml
-let CantidadChocolate = 1500;  // g
-let CantidadAzucar = 1500;     // g
-let CantidadVasos = 100;       // unidades
-let CantidadAgua = 5000;       // ml
+const MaquinaCafe = {
+  CantidadCafe: 1000,       // g
+  CantidadLeche: 2500,      // ml
+  CantidadChocolate: 1500,  // g
+  CantidadAzucar: 1500,     // g
+  CantidadVasos: 100,       // unidades
+  CantidadAgua: 5000        // ml
+};
 
 // Cantidad minima para la receta//
 
-let minCafe = 10;           // g
-let minLeche = 100;         // ml
-let minChocolate = 30;      // g
-let minAzucar = 10;         // g
-let minVasos = 1;           // unidades
-let minAgua = 100;          // ml
+const Minrecetas = {
+  minCafe: 10,           // g
+  minLeche: 100,         // ml
+  minAgua: 100,          // ml
+  minChocolate: 30,      // g
+  minAzucar: 10,         // g
+  minVasos: 1,           // unidades
+  minAgua: 100            // ml
+};
+
 //Cantidad de dinerode la maquina//
+
 const cantidaddinero = {
   moneda100: 100,
   moneda200: 200,
@@ -37,7 +44,9 @@ let cantbillete2000 = 100;
 let cantbillete5000 = 100;
 let cantbillete10000 = 50;
 let cantbillete20000 = 20;
+
 //Catalogio de productos y sus recetas//
+
 const recetasCafe = {
   espresso: { agua: 35, cafe: 15, leche: 0, chocolate: 0, precio: 2000 },
   americano: { agua: 100, cafe: 15, leche: 0, chocolate: 0, precio: 2800 },
@@ -47,45 +56,49 @@ const recetasCafe = {
   chocolate: { agua: 100, cafe: 0, leche: 120, chocolate: 40, precio: 3500 }
 };
  
-if (CantidadCafe <= minCafe || CantidadLeche <= minLeche || CantidadChocolate <= minChocolate || CantidadAzucar <= minAzucar || CantidadVasos <= minVasos) {
+if (CantidadCafe <= Minrecetas.minCafe || CantidadLeche <= Minrecetas.minLeche || CantidadChocolate <= Minrecetas.minChocolate || CantidadAzucar <= Minrecetas.minAzucar || CantidadVasos <= Minrecetas.minVasos) {
   console.log("La máquina de café no tiene suficientes insumos para preparar bebidas.");
 }
 
-if (CantidadCafe > minCafe && CantidadLeche > minLeche && CantidadChocolate > minChocolate && CantidadAzucar > minAzucar && CantidadVasos > minVasos) {
+if (CantidadCafe > Minrecetas.minCafe && CantidadLeche > Minrecetas.minLeche && CantidadChocolate > Minrecetas.minChocolate && CantidadAzucar > Minrecetas.minAzucar && CantidadVasos > Minrecetas.minVasos) {
   console.log("La máquina de café tiene suficientes insumos para preparar bebidas.");
 }
 
 
-if (minCafe <= 10 && minLeche <= 100 && minChocolate <= 30 && minAzucar <= 10 && minVasos <= 1) {
+if (Minrecetas.minCafe <= 10 && Minrecetas.minLeche <= 100 && Minrecetas.minChocolate <= 30 && Minrecetas.minAzucar <= 10 && Minrecetas.minVasos <= 1) {
   console.log("La cantidad de insumos es suficiente para preparar bebidas.");
 }
   else {
     console.log("La cantidad de insumos no es suficiente para preparar bebidas.");
   }
 
-
-//Preparacion para hacer el cafe quitando los insumos necesaros de la maquina para la receta//
-
-function restarvaso(){
-return CantidadVasos = CantidadVasos - 1
-}
-
  //Verificacion de insumos//
 
  function revisarInsumos(){
   if (
-    CantidadCafe <= minCafe ||
-    CantidadAgua <= minAgua ||
-    CantidadLeche <= minLeche ||
-    CantidadChocolate <= minChocolate ||
-    CantidadAzucar <= minAzucar ||
-    CantidadVasos <= minVasos
+    CantidadCafe <= Minrecetas.minCafe ||
+    CantidadAgua <= Minrecetas.minAgua ||
+    CantidadLeche <= Minrecetas.minLeche ||
+    CantidadChocolate <= Minrecetas.minChocolate ||
+    CantidadAzucar <= Minrecetas.minAzucar ||
+    CantidadVasos <= Minrecetas.minVasos
    ) {
     return "La máquina de café no tiene suficientes insumos.";
   }
   else{
   return "La máquina de café tiene suficientes insumos.";
   }}
+
+function dineroingresado(){
+  return cantmoneda100 * moneda100 + cantmoneda200 * moneda200 + cantmoneda500 * moneda500 + cantmoneda1000 * moneda1000 + cantbillete2000 * billete2000 + cantbillete5000 * billete5000 + cantbillete10000 * billete10000 + cantbillete20000 * billete20000;
+}
+
+function calculardinero() {
+  return denominaciones.reduce(
+    (total, valor) => total + valor * (caja[valor] || 0),
+    0
+  );
+}
 
 switch(recetasCafe){
     case "espresso":
@@ -130,8 +143,59 @@ switch(recetasCafe){
       CantidadLeche = CantidadLeche - chocolate;
       CantidadChocolate =  CantidadChocolate - chocolate;
       break;
-    default:
+    default:s
       console.log("La opcion no es valida. Seleccione un número del 1 al 6");
       break;
 }
 
+function validarinsumos(cafe, leche, chocolate, azucar, vasos, agua) {
+return
+  if ( espresso <= mincafe)
+    console.log("Hay suficintes insumos para preparar la bebida");
+  else {
+    console.log("No hay suficientes insumos para preparar la bebida");
+  }
+  if (americano <= Minrecetas)  
+    console.log("Hay suficintes insumos para preparar la bebida"); 
+  else {
+    console.log("No hay suficientes insumos para preparar la bebida");
+  }
+  if (cappuccino <= Minrecetas)
+    console.log("Hay suficintes insumos para preparar la bebida"); 
+  else {
+    console.log("No hay suficientes insumos para preparar la bebida");
+  }
+  if (latte <= Minrecetas)
+    console.log("Hay suficintes insumos para preparar la bebida");
+  else {
+    console.log("No hay suficientes insumos para preparar la bebida");
+  }
+  if (mocaccino <= Minrecetas)
+    console.log("Hay suficintes insumos para preparar la bebida");
+  else {
+    console.log("No hay suficientes insumos para preparar la bebida");
+  }
+  if (chocolate <= Minrecetas)
+    console.log("Hay suficintes insumos para preparar la bebida");
+  else {
+    console.log("No hay suficientes insumos para preparar la bebida");
+  }
+  if (CantidadVasos <= Minrecetas.minVasos)
+    console.log("Hay suficientes vasos para preparar la bebida");
+  else {
+    console.log("No hay suficientes vasos para preparar la bebida");
+  }
+}
+
+function restarvaso(){
+return CantidadVasos = CantidadVasos - 1
+}
+
+function restarInsumos(cafe, leche, chocolate, azucar, vasos, agua) {
+return cantidadCafe = cafe - CantidadCafe;
+return cantidadLeche = leche - CantidadLeche;
+return cantidadChocolate = chocolate - CantidadChocolate;
+return cantidadAzucar = azucar - CantidadAzucar;
+return cantidadVasos = vasos - CantidadVasos;
+return cantidadAgua = agua - CantidadAgua;
+}
